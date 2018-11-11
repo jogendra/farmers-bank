@@ -14,27 +14,18 @@
 
 /**
 * Sample transaction
-* @param {api.OrganTransfer} organTransfer
+* @param {api.CropTransfer} cropTransfer
 * @transaction
 */
-function organTransfer(organTransfer) {
-    if (organTransfer.from.bloodGroup != organTransfer.to.bloodGroup) {
-    throw new Error ("Invalid Transfer: The blood group of receiver and donor is not matching.");
-    }
-    if (organTransfer.from.organToDonate != organTransfer.to.requiredOrgan) {
-        throw new Error ("Invalid Transfer: The donated and required organs should be the same.")
-    }
-    organTransfer.from.donated = true;
-    organTransfer.to.received = true;
-    organTransfer.from.priorityPoints += organTransfer.rewardPonits;
-    return getParticipantRegistry('api.Donor')
+function organTransfer(cropTransfer) {
+    return getParticipantRegistry('api.Seller')
     .then (function (participantRegistry) {
-    return participantRegistry.update(organTransfer.from);
+    return participantRegistry.update(cropTransfer.from);
     })
     .then (function () {
-    return getParticipantRegistry('api.Receiver');
+    return getParticipantRegistry('api.Buyer');
     })
     .then(function (participantRegistry) {
-    return participantRegistry.update(organTransfer.to);
+    return participantRegistry.update(cropTransfer.to);
     });
     }
