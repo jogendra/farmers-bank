@@ -26,6 +26,7 @@ asset Crop identified by cropId {
   o String price
   o String location
   o Boolean availability  default = true
+  --> Seller
 }
 participant Seller identified by sellerId {
 o String sellerId

@@ -18,9 +18,9 @@
       <!-- Navbar start  -->
       <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo center">Be a Donor</a>
+      <a href="#" class="brand-logo center">Sell A Crop</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="reciever.html">Be a Reciever</a></li>
+        <li><a href="buyer.html">Buy A Crop</a></li>
       </ul>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
             <li><a href="../index.html">Home</a></li>
@@ -36,7 +36,7 @@
           <div class="card-panel white">
             <span class="grey-text">
                 <div class="row">
-                    <h2> Enter the Donor details </h2>
+                    <h3>Enter the Seller Details</h3>
                 </div>
                 <div class="row">
                     <form class="col s12">
@@ -52,28 +52,39 @@
                     </div>
                     <div class="row">
                         <div class="input-field col s12 m12">
-                            <input  id="blood_group" type="text" class="validate">
-                            <label for="blood_group">Blood group</label>
+                            <input  id="seller_contact" type="text" class="validate">
+                            <label for="seller_contact">Contact Information</label>
                         </div>
                     </div>
                     <div class="row">
-                        <a class='col s12 m12 dropdown-trigger btn' href='#' data-target='hospitalList'>Hospital preferred</a>
-                        <ul id='hospitalList' class=' dropdown-content'>
-                                <!-- <li id="0">hospital1</li> -->
-                        </ul>
+                        <h3>Enter the Crop Details</h3>
                     </div>
-                    <!-- <div class="row">
-                            <div class="input-field col s12 m12">
-                                <input  id="organ_name" type="text" class="validate">
-                                <label for="organ_name">Organ to be donated</label>
-                            </div>
-                    </div> -->
                     <div class="row">
-                            <a class='col s12 m12 dropdown-trigger btn' href='#' data-target='organList'>Organ to be donated</a>
-                            <ul id='organList' class=' dropdown-content'>
-                                    <!-- <li id="0">hospital1</li> -->
-                            </ul>
+                        <div class="input-field col s6 m6">
+                            <input  id="crop_name" type="text" class="validate">
+                            <label for="crop_name">Crop Name</label>
                         </div>
+                        <div class="input-field col s6 m6">
+                             <input id="crop_quantity" type="text" class="validate">
+                             <label for="crop_quantity">Crop Quantity</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12 m12">
+                            <input  id="crop_desc" type="text" class="validate">
+                            <label for="crop_desc">Crop Description</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6 m6">
+                            <input  id="crop_price" type="text" class="validate">
+                            <label for="crop_price">Crop Price</label>
+                        </div>
+                        <div class="input-field col s6 m6">
+                             <input id="crop_location" type="text" class="validate">
+                             <label for="crop_location">Crop Location</label>
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col s6 m6 offset-m3">
                             <button class="btn waves-effect waves-light" id="submit" type="submit" name="action">Submit
