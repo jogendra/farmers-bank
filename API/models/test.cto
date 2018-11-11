@@ -18,35 +18,28 @@
 
 namespace api
 
-asset Organ identified by organId {
-  o String organId
+asset Crop identified by cropId {
+  o String cropId
   o String name
+  o String description
+  o String quantity
+  o String price
+  o String location
+  o Boolean availability  default = true
 }
-participant Hospital identified by hospitalId {
-o String hospitalId
-o String name
-}
-participant Donor identified by donorId {
-o String donorId
+participant Seller identified by sellerId {
+o String sellerId
 o String firstName
 o String lastName
-o String bloodGroup
-o Hospital[] preferedHospitals
-o Organ organToDonate
-o Boolean donated  default = false
-o Integer priorityPoints optional
+o String contact
 }
-participant Receiver identified by receiverId {
-o String receiverId
+participant Buyer identified by buyerId {
+o String buyerId
 o String firstName
 o String lastName
-o String bloodGroup
-o Hospital[] preferedHospitals
-o Organ requiredOrgan
-o Boolean received  default = false
+o String contact
 }
-transaction OrganTransfer {
-  --> Donor from
-  --> Receiver to
-  o Integer rewardPonits
+transaction CropTransfer {
+  --> Seller from
+  --> Buyer to
 }
